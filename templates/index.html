@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortigate Config Cleaner</title>
+</head>
+<body>
+    <h1>Fortigate Configuration Cleaner</h1>
+
+    <form method="POST">
+        
+        <label for="config">Paste your Fortigate Configuration:</label><br>
+        <textarea id="config" name="config" rows="15" cols="100">{{ config or '' }}</textarea><br><br>
+
+        <input type="submit" value="Clean Configuration">
+    </form>
+
+    {% if result %}
+        <h2>Filtered Configuration:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
